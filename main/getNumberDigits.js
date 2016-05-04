@@ -1,13 +1,13 @@
-function getNumberDigits(firstInteger,lcdDigits) {
+function getNumberDigits(integer,lcdDigits) {
 
     var numberDigits = [];
-    var stringNumber = firstInteger.toString();
+    var stringNumber = integer.toString();
 
     for (var i = 0; i < stringNumber.length; i++) {
 
-        if (isExit(parseInt(stringNumber.charAt(i)), lcdDigits)) {
+        if (isExist(parseInt(stringNumber.charAt(i)), lcdDigits)) {
 
-            var digit = isExit(parseInt(stringNumber.charAt(i)), lcdDigits);
+            var digit = isExist(parseInt(stringNumber.charAt(i)), lcdDigits);
             numberDigits.push(digit);
         }
     }
@@ -15,12 +15,12 @@ function getNumberDigits(firstInteger,lcdDigits) {
     return numberDigits;
 }
 
-function isExit(number, lcdDigits) {
+function isExist(number, lcdDigits) {
 
     for (var i = 0; i < lcdDigits.length; i++) {
         if (number === parseInt(lcdDigits[i].number)) {
 
-            return lcdDigits[i].digits;
+            return lcdDigits[i].digit;
         }
     }
 }
