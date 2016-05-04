@@ -1,6 +1,6 @@
+var lcdDigits = require('./fixture.js').loadLcdDigits();
 describe(' integration testing', function () {
 
-    var lcdDigits = require('./fixture.js').loadLcdDigits();
 
     it('should print correct  number digits when input has three numbers', function () {
 
@@ -47,8 +47,6 @@ describe('unit testing', function () {
 
     describe('getNumberDigits', function () {
 
-        var lcdDigits = require('./fixture.js').loadLcdDigits();
-
         it('should print correct numberDigits when input has three numbers ', function () {
 
             var firstInteger = 910;
@@ -83,7 +81,6 @@ describe('unit testing', function () {
         });
     });
 
-
     describe('printNumberDigits', function () {
 
         it('should print correct NumberDigitsText when input has three numers', function () {
@@ -92,7 +89,7 @@ describe('unit testing', function () {
                 ['...', '..|', '..|'],
                 ['._.', '|.|', '|_|']];
             var testNumberDigitsText = '\n' + '._. ... ._. ' + '\n' + '|_| ..| |.| ' + '\n' + '..| ..| |_| ' + '\n';
-            var numberDigitsText = require("../main/printNumberDigits.js").printNumberDigits(firstNumberDigits);
+            var numberDigitsText = require("../main/printNumberDigits.js").generateNumberDigits(firstNumberDigits);
 
             expect(numberDigitsText).toEqual(testNumberDigitsText);
 
@@ -103,7 +100,7 @@ describe('unit testing', function () {
             var secondNumberDigits = [['._.', '|_.', '|_|'],
                 ['._.', '|_.', '._|']];
             var testNumberDigitsText = '\n' + '._. ._. ' + '\n' + '|_. |_. ' + '\n' + '|_| ._| ' + '\n';
-            var numberDigitsText = require("../main/printNumberDigits.js").printNumberDigits(secondNumberDigits);
+            var numberDigitsText = require("../main/printNumberDigits.js").generateNumberDigits(secondNumberDigits);
 
             expect(numberDigitsText).toEqual(testNumberDigitsText);
 
@@ -113,10 +110,9 @@ describe('unit testing', function () {
 
             var thirdNumberDigits = [['...', '..|', '..|']];
             var testNumberDigitsText = '\n' + '... ' + '\n' + '..| ' + '\n' + '..| ' + '\n';
-            var numberDigitsText = require("../main/printNumberDigits.js").printNumberDigits(thirdNumberDigits);
+            var numberDigitsText = require("../main/printNumberDigits.js").generateNumberDigits(thirdNumberDigits);
 
             expect(numberDigitsText).toEqual(testNumberDigitsText);
         });
     });
 });
-
